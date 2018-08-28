@@ -35,15 +35,15 @@
 	
 	<nav id="nav-menu" class="clearfix">
 		<form id="search" method="post" action="./" role="search">
-			<input id="search-input" type="text" name="s" class="inputbox" value="Search" onfocus="if (value =='Search'){value =''}" onblur="if (value ==''){value='Search'}">
+			<input id="search-input" type="text" name="s" class="inputbox" value="搜索" onfocus="if (value =='搜索'){value =''}" onblur="if (value ==''){value='搜索'}">
 		</form>
 		<ul>
       
 				
-        <li><a class="main-nav-link" href="/">Home</a></li>
+        <li><a class="main-nav-link" href="/">主页</a></li>
       
 				
-        <li><a class="main-nav-link" href="/archives">Archives</a></li>
+        <li><a class="main-nav-link" href="/archives">归档</a></li>
       
 		</ul>
 	</nav>
@@ -62,39 +62,34 @@
 
 
 
-        <p>1</p>
-<h2 id="构建环境"><a href="#构建环境" class="headerlink" title="构建环境"></a>构建环境</h2><p>语言环境安装 编译、解释 机器可读懂<br>编程环境安装 开发</p>
+        <h2 id="构建环境"><a href="#构建环境" class="headerlink" title="构建环境"></a>构建环境</h2><p>语言环境安装 编译、解释 机器可读懂<br>编程环境安装 开发</p>
 <h2 id="Python语言特点"><a href="#Python语言特点" class="headerlink" title="Python语言特点"></a>Python语言特点</h2><p>用缩进控制语句块从属，不同编辑器可能缩进不同<br>动态语言  在运行阶段绑定变量而不是编译阶段<br>强类型语言  变量类型可以根据上下文自动转换</p>
 <h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>元素用逗号分隔<br>使用方括号包围<br>直接用等号赋值，无需声明变量<br>使用索引的方式对list的元素进行访问</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">movies=[<span class="string">"aaa"</span>,<span class="string">"bbb"</span>,<span class="string">"ccc"</span>]</span><br></pre></td></tr></table></figure>
 <p>len 函数：返回值为list中元素个数（内建函数）<br>print 函数：打印 (内建函数)</p>
-<p>###如果用print直接打印movies<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">movies=[<span class="string">"111"</span>,<span class="string">"222"</span>,<span class="string">"333"</span>]</span><br></pre></td></tr></table></figure></p>
-<p>###如果数组越界<br>程序报错，<strong>确保不越界的方法</strong>是用len函数返回值控制</p>
+<h3 id="如果用print直接打印movies"><a href="#如果用print直接打印movies" class="headerlink" title="如果用print直接打印movies"></a>如果用print直接打印movies</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">movies=[<span class="string">"111"</span>,<span class="string">"222"</span>,<span class="string">"333"</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="如果数组越界"><a href="#如果数组越界" class="headerlink" title="如果数组越界"></a>如果数组越界</h3><p>程序报错，<strong>确保不越界的方法</strong>是用len函数返回值控制</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(len(movies))<span class="comment">#可以套着用</span></span><br><span class="line">3</span><br></pre></td></tr></table></figure>
-<p>###List中数据的常用操作<br>list.pop(3)无参时弹出末尾元素，<strong>参数为整数时弹出对应下标元素</strong>，返回值为该元素<br>list.remove(“aaa”)移除该元素，<strong>有几个移除几个</strong><br>list.append(“aaa”)追加单个元素<br>list.extend([“aaa”,”bbb”])追加多个元素（将新的list附加到现有list）<br>list.insert(0,”a”)在<strong>特定位置之前</strong>插入该元素</p>
+<h3 id="List中数据的常用操作"><a href="#List中数据的常用操作" class="headerlink" title="List中数据的常用操作"></a>List中数据的常用操作</h3><p>list.pop(3)无参时弹出末尾元素，<strong>参数为整数时弹出对应下标元素</strong>，返回值为该元素<br>list.remove(“aaa”)移除该元素，<strong>有几个移除几个</strong><br>list.append(“aaa”)追加单个元素<br>list.extend([“aaa”,”bbb”])追加多个元素（将新的list附加到现有list）<br>list.insert(0,”a”)在<strong>特定位置之前</strong>插入该元素</p>
 <p>·remove的数据不在list里，会报错<br>·insert的位置如果不在list中，自动追加到末尾</p>
 <p>del函数：<br>del movies[0] #删除单个元素<br>del movies[2:4] #删除下标为2-4的元素，<strong>包括头不包括尾</strong><br>del movies #删除整个List</p>
-<p>###list的嵌套操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=[&quot;111&quot;,&quot;222&quot;,[&quot;333&quot;,[&quot;444&quot;,&quot;555&quot;]]]</span><br><span class="line">print(a[2][1][1])</span><br><span class="line">555</span><br></pre></td></tr></table></figure></p>
-<p>##循环结构<br>注意<em>关键字 冒号 缩进 语句块</em></p>
-<p>###for in 循环结构</p>
-<p>无需关心循环什么时候终止，只需要关心对取出的数据进行什么操作</p>
+<h3 id="list的嵌套操作"><a href="#list的嵌套操作" class="headerlink" title="list的嵌套操作"></a>list的嵌套操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=[&quot;111&quot;,&quot;222&quot;,[&quot;333&quot;,[&quot;444&quot;,&quot;555&quot;]]]</span><br><span class="line">print(a[2][1][1])</span><br><span class="line">555</span><br></pre></td></tr></table></figure>
+<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><p>注意<em>关键字 冒号 缩进 语句块</em></p>
+<h3 id="for-in-循环结构"><a href="#for-in-循环结构" class="headerlink" title="for in 循环结构"></a>for in 循环结构</h3><p>无需关心循环什么时候终止，只需要关心对取出的数据进行什么操作</p>
 <p><strong>for</strong> target identifer <strong>in</strong> list:<br>    list-processing code<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">m=[<span class="string">"111"</span>,<span class="string">"222"</span>,<span class="string">"333"</span>]</span><br><span class="line"><span class="keyword">for</span> each_item <span class="keyword">in</span> m:</span><br><span class="line">    <span class="built_in">print</span>(each_item)</span><br><span class="line"></span><br><span class="line">111</span><br><span class="line">222</span><br><span class="line">333</span><br></pre></td></tr></table></figure></p>
 <p>也可以控制循环次数，配合range函数：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(4): <span class="comment">#range(x),生成一个从0到x，只有整数的的list</span></span><br><span class="line"><span class="comment">#a=range(4)   的效果为  a=[1,2,3,4]</span></span><br><span class="line">这个放在内建函数里写</span><br><span class="line"><span class="comment">#range(a,b,c)  生成从a到b（不含b），步长为c的list</span></span><br><span class="line">    <span class="built_in">print</span>(movies[i])</span><br></pre></td></tr></table></figure></p>
-<p>###while循环</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> 控制条件:</span><br><span class="line">    代码块</span><br></pre></td></tr></table></figure>
+<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> 控制条件:</span><br><span class="line">    代码块</span><br></pre></td></tr></table></figure>
 <p>用下标控制/条件控制循环终止</p>
-<p>##if else 条件语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if 判断条件:</span><br><span class="line">    代码块</span><br><span class="line">elif</span><br><span class="line">    if xxx:</span><br><span class="line">        代码块</span><br></pre></td></tr></table></figure></p>
-<p>##函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def 函数名(参数列表)</span><br><span class="line">    代码块</span><br></pre></td></tr></table></figure>
-<p>###函数参数</p>
-<p>####可变长参数<br>*argx   ()<br>接受一个包装为元组形式的参数列表来传递非关键字参数，参数个数可以随意。</p>
+<h2 id="if-else-条件语句"><a href="#if-else-条件语句" class="headerlink" title="if else 条件语句"></a>if else 条件语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if 判断条件:</span><br><span class="line">    代码块</span><br><span class="line">elif</span><br><span class="line">    if xxx:</span><br><span class="line">        代码块</span><br></pre></td></tr></table></figure>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def 函数名(参数列表)</span><br><span class="line">    代码块</span><br></pre></td></tr></table></figure>
+<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><h4 id="可变长参数"><a href="#可变长参数" class="headerlink" title="可变长参数"></a>可变长参数</h4><p>*argx   ()<br>接受一个包装为元组形式的参数列表来传递非关键字参数，参数个数可以随意。</p>
 <p>**kwargx  []<br>接收字典形式的关键字参数列表，其中字典的键值对分别表示不可变参数的参数名和值。</p>
 <p>参数列表顺序：普通参数、默认参数、*可变长参数、**可变长参数</p>
 <p>以上参数同时出现时，有如下效果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def foo(x,y=2,*argx,**kwargx):</span><br><span class="line">    print(x)</span><br><span class="line">    print(y)</span><br><span class="line">    print(argx)</span><br><span class="line">    print(kwargx)</span><br><span class="line">foo(1,1,2,3,4,5,6,7)</span><br><span class="line"></span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">(2, 3, 4, 5, 6, 7)</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>·不能指定y值，y值只能是参数列表里第二个值，也就是说y值没有，后面两个值也没有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">foo(1,y=3,5,5,5,5,5)</span><br><span class="line"></span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1</span><br><span class="line">SyntaxError: positional argument follows keyword argument</span><br><span class="line">#由后面可知，此处出错的原因是由于如果可以赋值的话，y=3位置是任意的，那么可变参数就没办法被赋值</span><br><span class="line">foo(1,3)</span><br><span class="line"></span><br><span class="line">1</span><br><span class="line">3</span><br><span class="line">()</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>·在没有可变参数的情况下，python可以对变量进行一对一的赋值，参数顺序任意<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def fuc2(a,b=2):</span><br><span class="line">    print(a)</span><br><span class="line">    print(b)</span><br><span class="line"></span><br><span class="line">fuc2(a=1,b=3)</span><br><span class="line"></span><br><span class="line">1</span><br><span class="line">3</span><br><span class="line">fuc(b=3,a=2)</span><br><span class="line"></span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure></p>
-<p>###内建函数  BIF<br>编程语言中预先定义的函数。python运行环境打开之后，就存在于该命名空间中，可以直接调用<br>dir(<strong>builtins</strong>)语句可显示该空间内所有内建函数<br>常见BIF：print len del isinstance</p>
-<p>####isinstance函数<br>用于数据类型的检查<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isinstance(x,y)  #判断x是不是y的实例，返回值为true/false（布尔类型）</span><br></pre></td></tr></table></figure></p>
+<h3 id="内建函数-BIF"><a href="#内建函数-BIF" class="headerlink" title="内建函数  BIF"></a>内建函数  BIF</h3><p>编程语言中预先定义的函数。python运行环境打开之后，就存在于该命名空间中，可以直接调用<br>dir(<strong>builtins</strong>)语句可显示该空间内所有内建函数<br>常见BIF：print len del isinstance</p>
+<h4 id="isinstance函数"><a href="#isinstance函数" class="headerlink" title="isinstance函数"></a>isinstance函数</h4><p>用于数据类型的检查<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isinstance(x,y)  #判断x是不是y的实例，返回值为true/false（布尔类型）</span><br></pre></td></tr></table></figure></p>
 
       </div>
   </article>
@@ -112,11 +107,9 @@
 
 
 
-        <p>##中文井号</p>
-<p>##英文井号</p>
+        <h2 id="中文井号"><a href="#中文井号" class="headerlink" title="中文井号"></a>中文井号</h2><h2 id="英文井号"><a href="#英文井号" class="headerlink" title="英文井号"></a>英文井号</h2><blockquote>
+<h3 id="井号问题不是中英文的问题，而是打完井号之后要打空格"><a href="#井号问题不是中英文的问题，而是打完井号之后要打空格" class="headerlink" title="井号问题不是中英文的问题，而是打完井号之后要打空格"></a>井号问题不是中英文的问题，而是打完井号之后要打空格</h3></blockquote>
 <p>从昨天晚上到今天下午，终于初步理解了<strong>github博客的原理</strong>，查了好多教程，终于弄出了一个网页，激动的不得了，后来又发现什么<em>hexo,Jekyll</em>，弄了好久，最后决定用hexo（因为Jekyll一点头绪没有哈哈哈）。本来以为这东西还要拿什么语言写，后来发现markdown只是文本排版，巨高兴，理解了这东西其实也没那么难，只要理解了是什么就好弄了。</p>
-<p>##中文井号</p>
-<p>##英文井号</p>
 <h2 id="以后要做的事"><a href="#以后要做的事" class="headerlink" title="以后要做的事"></a>以后要做的事</h2><p>有时间要看看Jekyll。<br>明天弄一个博客教程吧，网上博客都好垃圾啊！！！</p>
 <blockquote>
 <h2 id="MARKDOWN"><a href="#MARKDOWN" class="headerlink" title="MARKDOWN"></a>MARKDOWN</h2><p>本来想把markdown所有的东西都试一遍，一百度发现这么多……不急哈哈，我们有很长很长的时间用来相处。</p>
