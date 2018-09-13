@@ -52,6 +52,27 @@
   <article class="post">
       
         
+          <h1><a href="/2018/08/29/处理异常/">处理异常</a></h1>
+        
+      
+      <div class="post-content ">
+        
+  
+
+
+
+
+        <p>##获取数据<br>程序的通用结构： 输入+处理+输出<br>数据输入的来源：数据库、文本文件、网络、用户输入</p>
+<h3 id="文件的打开与关闭"><a href="#文件的打开与关闭" class="headerlink" title="文件的打开与关闭"></a>文件的打开与关闭</h3><p>the_file=open(“1.txt”,”w”)# w为文件的打开方式<br>the_file.close()</p>
+<h2 id="处理异常的方法"><a href="#处理异常的方法" class="headerlink" title="处理异常的方法"></a>处理异常的方法</h2><p>python 解释器处理异常的方法：<br>1、在python的世界里，<strong>运行时错误</strong>被称作异常。<br>2、使用traceback回溯的方法查找出现异常的位置。<br>3、如果在程序中没有提供异常解决方法，当解释器发现异常时，会马上抛出异常。<br>4、python 提供了异常处理方法允许程序存在异常，但必须提供异常捕获方法，捕获异常处理后，程序继续运行。</p>
+<h3 id="try…except…"><a href="#try…except…" class="headerlink" title="try…except…"></a>try…except…</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    代码块，这里是正常运行的代码，若里面出现异常，则转到except里面</span><br><span class="line">except:</span><br><span class="line">    代码块，</span><br></pre></td></tr></table></figure>
+
+      </div>
+  </article>
+
+  <article class="post">
+      
+        
           <h1><a href="/2018/08/29/函数打包成模块/">函数打包成模块</a></h1>
         
       
@@ -62,13 +83,20 @@
 
 
 
-        <p>##Python PackageIndex(PYPI)<br>是第三方模块的存储中心，开发人员可以上传到PyPI中进行模块的共享。</p>
+        <h2 id="Python-PackageIndex-PYPI"><a href="#Python-PackageIndex-PYPI" class="headerlink" title="Python PackageIndex(PYPI)"></a>Python PackageIndex(PYPI)</h2><p>是第三方模块的存储中心，开发人员可以上传到PyPI中进行模块的共享。</p>
+<p>添加注释：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">多行</span><br><span class="line">注释</span><br></pre></td></tr></table></figure>
+
+#此为单行注释
+</code></pre><h2 id="函数转化成模块"><a href="#函数转化成模块" class="headerlink" title="函数转化成模块"></a>函数转化成模块</h2><h3 id="打包方法"><a href="#打包方法" class="headerlink" title="打包方法"></a>打包方法</h3><p>将所需要打包的函数放到一个文件里，后缀为.py</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>第一种情况是将函数写在文件里之后，<strong>在文件打开的状态下</strong>（在IDLE里打开）按F5，会调出运行环境，直接可以使用模块，此时函数前面不需要加命名空间。</p>
 <blockquote>
-<p>添加注释：<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```此为</span><br><span class="line">多行</span><br><span class="line">注释</span><br></pre></td></tr></table></figure></p>
+<p>IDLE是什么？<br>这个地方我弄得时候闹了个笑话，我把文件保存下来之后直接在运行的黑框框里按F5，可想而知的并没有什么卵用，后来查了IDLE的定义才懂<br>IDLE：是一个纯 Python 下自带的简洁的集成开发环境(IDE)，具备基本的IDE的功能，人家是编辑py代码的，意思就是先在这个IDLE里把你写的函数写好，保存成一个py文件，用IDLE打开，按F5，之后就可以直接用了<br><strong>注意</strong>:直接用IDLE写函数按F5是不行的，他不是文件，也就不是模块（就没法弹出黑框框），必须保存成文件打开才可以<br><strong>得到的知识</strong>:py的语言环境安装好之后，有一个语言运行环境的程序，还有一个IDLE</p>
 </blockquote>
-<pre><code>#此为单行注释
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##函数转化成模块</span><br><span class="line">###打包方法</span><br><span class="line">将所需要打包的函数放到一个文件里，后缀为.py</span><br><span class="line">###使用方法</span><br><span class="line">第一种情况是将函数写在文件里之后，**在文件打开的状态下**（在IDLE里打开）按F5，会调出运行环境，直接可以使用模块，此时函数前面不需要加命名空间。</span><br><span class="line"></span><br><span class="line">&gt;IDLE是什么？</span><br><span class="line">这个地方我弄得时候闹了个笑话，我把文件保存下来之后直接在运行的黑框框里按F5，可想而知的并没有什么卵用，后来查了IDLE的定义才懂</span><br><span class="line">IDLE：是一个纯 Python 下自带的简洁的集成开发环境(IDE)，具备基本的IDE的功能，人家是编辑py代码的，意思就是先在这个IDLE里把你写的函数写好，保存成一个py文件，用IDLE打开，按F5，之后就可以直接用了</span><br><span class="line">**注意**直接用IDLE写函数按F5是不行的，他不是文件，也就不是模块（就没法弹出黑框框），必须保存成文件打开才可以</span><br><span class="line">**得到的知识**py的语言环境安装好之后，有一个语言运行环境的程序，还有一个IDLE</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">另一种情况是打开py的运行环境：</span><br><span class="line">1、import 文件名（不需要加.py）</span><br><span class="line">此时相当于打开该模块的命名空间，在当前空间里可以使用其中的函数</span><br><span class="line">**使用时前面要加模块名**，如nester.foo()</span><br><span class="line">2、from 文件名（不需要加.py） import 函数名</span><br><span class="line">此时相当于把该模块下的函数加到当前空间里</span><br><span class="line">**使用时不需要加模块名**，如foo()</span><br><span class="line"></span><br><span class="line">##将模块上传到PYPI</span><br><span class="line">1、登录网站，注册账号</span><br><span class="line">2、打开cmd（win+R打开运行，输入cmd）</span><br><span class="line">先用cd （所在文件夹路径名）此条命令，打开所在文件夹</span><br><span class="line">如cd C:\Users\lenovo\Desktop\test_upload</span><br><span class="line">输入py setup.py sdist</span><br><span class="line">此时文件夹里会出现MANIFEST文件以及一个叫dist的文件夹</span><br><span class="line">输入py setup.py install</span><br><span class="line">此时会出现build文件夹，此时模块已经准备好要上传了</span><br><span class="line"></span><br><span class="line">###至今没有搞懂的地方</span><br><span class="line">正常应该输入 py setup.py register，按提示输入用户名和密码，直接可以上传成功</span><br><span class="line">出现错误 410：Project pre-registration is no longer required or supported, upload your files instead.</span><br><span class="line">查了一下，原因是上传的url地址迁移了，需要更改本地的配置文件。</span><br><span class="line">修改本地配置文件$HOME/.pypirc，将repository修改为：</span><br><span class="line">```bash</span><br><span class="line">[distutils]</span><br><span class="line">index-servers =</span><br><span class="line">    pypi</span><br><span class="line"></span><br><span class="line">[pypi]</span><br><span class="line">repository: https://upload.pypi.org/legacy/</span><br><span class="line">username: your username</span><br><span class="line">password: your password</span><br></pre></td></tr></table></figure>
-<p><strong>错误</strong>这个文件是没有名字的.pypirc文件，在操作的时候，我并不知道这个文件在哪里，于是在文件夹里建了一个，将上面的内容放了进去，但是还是报410，不懂</p>
+<p>另一种情况是打开py的运行环境：<br>1、import 文件名（不需要加.py）<br>此时相当于打开该模块的命名空间，在当前空间里可以使用其中的函数<br><strong>使用时前面要加模块名</strong>，如nester.foo()<br>2、from 文件名（不需要加.py） import 函数名<br>此时相当于把该模块下的函数加到当前空间里<br><strong>使用时不需要加模块名</strong>，如foo()</p>
+<h2 id="将模块上传到PYPI"><a href="#将模块上传到PYPI" class="headerlink" title="将模块上传到PYPI"></a>将模块上传到PYPI</h2><p>1、登录网站，注册账号<br>2、打开cmd（win+R打开运行，输入cmd）<br>先用cd （所在文件夹路径名）此条命令，打开所在文件夹<br>如cd C:\Users\lenovo\Desktop\test_upload<br>输入py setup.py sdist<br>此时文件夹里会出现MANIFEST文件以及一个叫dist的文件夹<br>输入py setup.py install<br>此时会出现build文件夹，此时模块已经准备好要上传了</p>
+<h3 id="至今没有搞懂的地方"><a href="#至今没有搞懂的地方" class="headerlink" title="至今没有搞懂的地方"></a>至今没有搞懂的地方</h3><p>正常应该输入 py setup.py register，按提示输入用户名和密码，直接可以上传成功<br>出现错误 410：Project pre-registration is no longer required or supported, upload your files instead.<br>查了一下，原因是上传的url地址迁移了，需要更改本地的配置文件。<br>修改本地配置文件$HOME/.pypirc，将repository修改为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[distutils]</span><br><span class="line">index-servers =</span><br><span class="line">    pypi</span><br><span class="line"></span><br><span class="line">[pypi]</span><br><span class="line">repository: https://upload.pypi.org/legacy/</span><br><span class="line">username: your username</span><br><span class="line">password: your password</span><br></pre></td></tr></table></figure></p>
+<p><strong>错误</strong>:这个文件是没有名字的.pypirc文件，在操作的时候，我并不知道这个文件在哪里，于是在文件夹里建了一个，将上面的内容放了进去，但是还是报410，不懂</p>
 <p>之后又查到输入python setup.py register sdist upload -r <a href="http://pypi.org" target="_blank" rel="noopener">http://pypi.org</a> 即可上传，输入之后的确上传成功（200），可是我并没有在网站上看到我上传的模块。</p>
 <p>register后还有一步py setup.py sdist upload？我都没运行到这一步（笑）<br>试过了会报403??</p>
 <p>参考资料：<br>PYPI官网上的：<br><a href="https://packaging.python.org/guides/migrating-to-pypi-org/#uploading" target="_blank" rel="noopener">https://packaging.python.org/guides/migrating-to-pypi-org/#uploading</a><br><a href="https://blog.csdn.net/u013203322/article/details/79663134" target="_blank" rel="noopener">【Python小白】向PyPI上传代码出现问题，报401或者410如何解决（主要是上传的URL不正确）！</a></p>
